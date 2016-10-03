@@ -29,7 +29,9 @@ module.exports = function (app, addon) {
     );
 
     // Add any additional route handlers you need for views or REST resources here...
-
+    app.get('/my-requests', addon.authenticate(), function (req, res) {
+        res.render('my-requests');
+    });
 
     // load any additional files you have in routes and apply those to the app
     {

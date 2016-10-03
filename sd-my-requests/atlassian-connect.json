@@ -21,28 +21,25 @@
         "READ"
     ],
     "modules": {
-        "generalPages": [
+        "jiraProjectTabPanels": [
             {
-                "key": "hello-world-page-jira",
-                "location": "system.top.navigation.bar",
+                "key": "my-requests-link",
                 "name": {
-                    "value": "Hello World"
+                    "value": "My Requests"
                 },
-                "url": "/hello-world",
-                "conditions": [{
-                    "condition": "user_is_logged_in"
-                }]
-            },
-            {
-                "key": "hello-world-page-confluence",
-                "location": "system.header/left",
-                "name": {
-                    "value": "Hello World"
-                },
-                "url": "/hello-world",
-                "conditions": [{
-                    "condition": "user_is_logged_in"
-            }]
-        }]
+                "url": "/my-requests",
+                "conditions": [
+                    {
+                        "condition": "user_is_logged_in"
+                    },
+                    {
+                        "condition": "can_use_application",
+                        "params": {
+                            "applicationKey": "jira-servicedesk"
+                        }
+                    }
+                ]
+            }
+        ]
     }
 }
